@@ -32,6 +32,7 @@ AddTwo PROC
 	push eax
 	push esi
 
+
 	; Step 7: Implement the addition and store the result at
 	;		  the given address in memory
 	mov eax, [ebp+8]  ; Access first argument ( 5 )
@@ -41,9 +42,17 @@ AddTwo PROC
 					  ; third argument in ESI register
 	mov [esi],eax	  ; Store the result at the given address in memory 
 
-	
 
-	ret
+	; Step 8 : Clean Registers in the opposite sequence
+	pop esi
+	pop eax
+	; Step 9 : Clean local variable if any
+	mov esp,ebp
+	; Step 10 : Restore Stack Frame Base Address for the caller 
+	pop EBP
+	; Step 11 (STDCALL Convention): Return to the caller and clean up 
+	; the arguments. 3 arguments X 4 bytes each = 12 bytes  
+	ret	3*4	 	
 AddTwo ENDP
 
 ; **************************************************************
