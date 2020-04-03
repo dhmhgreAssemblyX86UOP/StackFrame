@@ -43,6 +43,8 @@ main PROC
 	push OFFSET res		; pass the address of res variable ( pass by reference)
 	push 6
 	push 5
+	; Step 2 : Call AddTwo procedure
+	call AddTwo
 exit
 
 main ENDP
