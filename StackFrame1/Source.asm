@@ -22,6 +22,18 @@ AddTwo PROTO
 ;				the caller
 ; **************************************************************
 AddTwo PROC
+	; Step 3: Push EBP
+	push EBP
+	; Step 4: Make EBP point to the current location pointed by ESP
+	mov EBP,ESP
+	; Step 5: Create space for local variables
+	; None in this example
+	; Step 6: Save Registers 
+	push eax
+	push esi
+
+
+
 
 
 	ret
