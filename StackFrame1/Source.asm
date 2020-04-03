@@ -73,6 +73,12 @@ main PROC
 	push 5
 	; Step 2 : Call AddTwo procedure
 	call AddTwo
+
+	; Step 12:  Store the result to EAX and print it to the screen
+	; Notice that res variable value has been updated through
+	; the call to AddTwo procedure
+	mov eax ,res
+	call WriteInt
 exit
 
 main ENDP
