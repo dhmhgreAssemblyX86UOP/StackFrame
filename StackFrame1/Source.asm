@@ -3,8 +3,14 @@ INCLUDE Irvine32.inc
 
 .data
 
+AddTwo PROTO
 
 .code
+AddTwo PROC
+
+
+	ret
+AddTwo ENDP
 main PROC
 
 
