@@ -43,7 +43,8 @@ AddTwo PROC
 	; Step 7: Implement the addition and store the result at
 	;		  the given address in memory
 	mov eax, [ebp+8]  ; Access first argument ( 5 )
-	add eax, [ebp+12] ; Access second argument ( 6 ) and add it to the first  
+	add eax, [ebp+12] ; Access second argument ( 6 ) and add it to the first 
+	add eax, [ebp-4]  ; Add scalar local variable to the sum
 
 	mov esi, [ebp+16] ; Store the result return address given by the 
 					  ; third argument in ESI register
