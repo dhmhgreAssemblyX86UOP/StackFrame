@@ -26,8 +26,15 @@ AddTwo PROC
 	push EBP
 	; Step 4: Make EBP point to the current location pointed by ESP
 	mov EBP,ESP
-	; Step 5: Create space for local variables
-	; None in this example
+	; Step 5: Create space for local variables and initialize them
+	; Allocate space for one scalar variable of type int (SDWORD) and
+	; one array variable of type int with two elements 
+	sub ESP,12
+	; Initialize scalar local variable
+	mov [EBP-4], SDWORD PTR 1
+	; Initialize array local variable
+	mov [EBP-8], SDWORD PTR 10
+	mov [EBP-12], SDWORD PTR 11
 	; Step 6: Save Registers 
 	push eax
 	push esi
